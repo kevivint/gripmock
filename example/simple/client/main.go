@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	pb "github.com/tokopedia/gripmock/example/simple"
+	pb "github.com/kevivint/gripmock/example/simple"
 	"google.golang.org/grpc"
 )
 
@@ -24,7 +24,7 @@ func main() {
 	c := pb.NewGripmockClient(conn)
 
 	// Contact the server and print out its response.
-	name := "tokopedia"
+	name := "kevivint"
 	if len(os.Args) > 1 {
 		name = os.Args[1]
 	}
