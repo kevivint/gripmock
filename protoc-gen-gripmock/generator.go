@@ -40,7 +40,7 @@ func main() {
 
 	protos := make([]*descriptor.FileDescriptorProto, len(plugin.Files))
 	for index, file := range plugin.Files {
-		log.Printf("proto file: %v\n", file.Proto.Name)
+		log.Printf("proto file: %s\n", file.Proto)
 		protos[index] = file.Proto
 	}
 
