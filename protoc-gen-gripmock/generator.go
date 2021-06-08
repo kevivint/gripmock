@@ -30,7 +30,6 @@ func main() {
 	if err := proto.Unmarshal(input, &request); err != nil {
 		log.Fatalf("error unmarshalling [%s]: %v", string(input), err)
 	}
-	log.Printf("request: %v\n", request)
 
 	// Initialise our plugin with default options
 	opts := protogen.Options{}
@@ -41,7 +40,7 @@ func main() {
 
 	protos := make([]*descriptor.FileDescriptorProto, len(plugin.Files))
 	for index, file := range plugin.Files {
-		log.Printf("proto file: %v\n", file.Proto)
+		log.Printf("proto file: %v\n", file.Proto.Name)
 		protos[index] = file.Proto
 	}
 
